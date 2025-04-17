@@ -14,7 +14,7 @@
 	font-family: arial;
 }
 body {
-	background:url("cover3.jpeg") no-repeat;
+	background:url("degrade.jpg") no-repeat;
 	height: 100vh;
 	
 	background-size: cover;
@@ -33,22 +33,23 @@ header{
 
 }
 header h1{
-	font-size: 40px;
-	color: white;
+	font-size: 30px;
+	color: #f0c095;
 	font-weight: bold;
 	cursor: pointer;
-	font-family: elephant;
+	font-family: arial;
 	position: relative;
-	top: 20px;
+	top: 3px;
+	left: 30px;
 
 }
 header h1 span{
-	border: 1px solid #BB29BB;
-	font-family: elephant;
+	
+	font-family: arial;
 	
 }
 .first-text{
-	color: #CBFADC;
+	color: white;
 }
 header a{
 	text-decoration: none;
@@ -64,26 +65,27 @@ a, header button{
 }
  header button{
 	background: transparent;
-	border: 1px solid #BB29BB;
+	border: 2px solid #0d47a1;
 	border-radius:50px;
 	padding:5px 8px;
 	position: relative;
-	top: 15px;
-	left:0px;
+	top: 5px;
+	right:25px;
+	font-weight: bold;
 	
 }
  header button:hover{
-	background-color: #BB29BB;
+	background-color: #0d47a1;
 	transition: all 0.4s ease 0s;
 }
 
 .wrapper{
 	width: 55vw;
-	height: 65vh;
+	height: 70vh;
 	box-shadow: 10px 10px 10px  rgba(0, 0, 0, 0.6); /* box-shadow:del __ rgba: color d del */
 	position: absolute;
-	left: 250px;
-	top: 200px;
+	left: 300px;
+	top: 160px;
 	overflow: hidden; 
 	background-color: white;
 	border-radius: 10px;
@@ -95,20 +97,29 @@ a, header button{
 	
 }
 .wrapper h3{
-	font-size: 30px;
-	color: #BB29BB;
+	font-size: 50px;
+	color: #0d47a1;
 	position: relative;
-	left: 30px;
+	left: 100px;
 	top: 80px;
+	font-family: elephant;
 }
 
 .wrapper h4{
-	font-size: 35px;
+	font-size: 50px;
 	font-weight: bold;
-	color: #BB29BB;
+	color: #0d47a1;
+	position: relative;
+	left: 80px;
+	top: 80px;
+	font-family: elephant;
+}
+.wrapper h2{
+	font-size: 15px;
+	color: black;
 	position: relative;
 	left: 30px;
-	top: 80px;
+	top: 100px;
 }
 .signup{
 	position: absolute;
@@ -130,13 +141,13 @@ a, header button{
 	position: relative;
 	top: 160px;
 	left: 30px;
-	color: #BB29BB;
+	color: #0d47a1;
 
 }
 .icon input{
      width:200px;
 	 height: 30px;
-	 border: 1px solid #BB29BB;
+	 border: 1px solid #0d47a1;
 	 border-radius: 5px;
 	 position: relative;
 	 left: 140px;
@@ -179,8 +190,8 @@ a, header button{
 	color:white;
 	text-decoration: none;
 	cursor: pointer;
-	background: #BB29BB;
-	border: 1px solid #BB29BB;
+	background: #0d47a1;
+	border: 1px solid #0d47a1;
 	border-radius:5px;
 	padding:5px 8px;
 	width: 300px;
@@ -188,7 +199,7 @@ a, header button{
 	
 }
 .wrapper button:hover{
-	background-color: #BB29BB;
+	background-color: #0d47a1;
 	transition: all 0.4s ease 0s;
 }
 .wrapper p{
@@ -207,7 +218,7 @@ a, header button{
 	bottom: -100px;
 	top: 180px ;
 	font-weight: bold;
-	color: #BB29BB;
+	color: #0d47a1;
 }
 .wrapper a:hover{
 	background-color: black;
@@ -222,8 +233,8 @@ a, header button{
 	color:white;
 	text-decoration: none;
 	cursor: pointer;
-	background: #BB29BB;
-	border: 1px solid #BB29BB;
+	background: #0d47a1;
+	border: 1px solid #0d47a1;
 	border-radius:8px;
 	padding:5px 8px;
 	width: 100px;
@@ -233,7 +244,7 @@ a, header button{
 
 .image-wrapper{
 display: inline-block;
-	background:url("violet.jpeg");
+	background:url("lrn.jpg");
 	background-size: 27.5vw 65vh;
 	width:50% ;
 	height: 100%;
@@ -241,37 +252,8 @@ display: inline-block;
 	left:27.5vw;
 
 }
-.image-wrapper i{
-	font-size: 80px;
-	position: relative;
-	left: 150px;
-	top: 200px;
-	color: white;
-}
-#user1{
-animation:user1 1s infinite  alternate;
-}
-#user2{
-animation:user2 1s infinite alternate;
-}
-@keyframes user1{
-	0%{
-transform: translateX(0px);
-	}
-100%{
-	transform: translateX(100px);
 
-}
-}
-@keyframes user2{
-	0%{
-transform: translateX(0px);
-	}
-100%{
-	transform: translateX(-100px);
 
-}
-}
 </style>
 <body>
 <header>
@@ -284,11 +266,11 @@ transform: translateX(0px);
 
 <div class="wrapper">
 	  <div class="image-wrapper">
-	  	<i class="fa-regular fa-user" id="user1"></i>
-	  	<i class="fa-regular fa-user" id="user2"></i>
+	  	
 	  </div>
-<h3>Hello,</h3>
-<h4>Welcome!</h4>
+<h3>Espace</h3>
+<h4>Etudiant</h4>
+<h2>Connectez vous pour accéder à votre espace</h2>
 	<div class="signup">
  	<form>
  	<div class="icon">
