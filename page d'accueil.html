@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plateforme d’examen en ligne</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('pc4.jpg'); 
+      background-size: cover;
+      background-position: center;
+      color: white;
+    }
+
+    .header {
+      background-color: white;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.0);
+      margin-top: 20px;
+      margin-left: 18px;
+      margin-right: 18px;
+    }
+
+    .header-left {
+      font-weight: bold;
+    }
+
+    .header-right {
+      font-weight: bold;
+      color: #444;
+      font-size: 16px;
+    }
+
+    .espace {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      text-align: center;
+      backdrop-filter: brightness(0.9); /* ajuste la luminosité. */
+    }
+
+    .espace h1 {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      background-color: #0a0e56;
+      color: white;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #1a1f70;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em;
+      }
+
+      .header-left,
+      .header-right {
+        font-size: 1.2em;
+      }
+
+      .espace h1 {
+        font-size: 2em;
+      }
+
+      .btn-group {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 0.9em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .espace h1 {
+        font-size: 1.8em;
+      }
+
+      .btn {
+        font-size: 0.8em;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-left">Plateforme d’examen en ligne</div>
+    <div class="header-right">💡 Votre avenir commence ici</div>
+  </div>
+
+  <div class="espace">
+    <h1>Bienvenue sur la plateforme<br>d’examen en ligne</h1>
+    <div class="btn-group">
+      <a href="connexion_enseignant.html" class="btn">Espace Enseignant</a>
+      <a href="connexion_etudiant.html" class="btn">Espace Étudiant</a>
+    </div>
+  </div>
+
+</body>
+</html>
