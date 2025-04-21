@@ -203,8 +203,9 @@
 			color: #0d47a1;
 		}
 		.wrapper a:hover {
-			background-color: black;
+			background-color: #0d47a1;
 			transition: all 0.4s ease 0s;
+			color: white;
 		}
 		.button2 button {
 			position: relative;
@@ -313,27 +314,40 @@
 	<h4>Enseignant</h4>
 	<h2>Connectez vous pour accéder à votre espace</h2>
 	<div class="signup">
-		<form>
+		<form  id="loginForm">
 			<div class="icon">
 				<span>E-mail</span>
-				<input type="email" placeholder=" Entrer votre e-mail ">
+				<input type="email" name="email" placeholder=" Entrer votre e-mail " required>
 				<i class="fa-solid fa-envelope"></i>
 			</div>
 			<div class="icon">
 				<span>Mot de passe</span>
-				<input type="password" placeholder=" Entrer votre mot de passe" id="Passwordinput">
+				<input type="password" name="password" placeholder=" Entrer votre mot de passe" id="Passwordinput" required>
 				<i class="fa-solid fa-eye-slash" id="eyeslash"></i>
 			</div>
 			<div class="checkbox">
 				<input type="checkbox"> Voir mot de passe
 			</div>
-			<button>Se connecter</button>
+			
+			<!-- Bouton Se connecter -->
+			<button type="submit">Se connecter</button>
+
 			<p>Vous n´avez pas de compte? </p>
-			<a href="">Inscrivez-vous maintenant</a>
-			<div class="button2"><button>Créer un compte</button></div>
+			<a href="inscription_enseignant.html">Inscrivez-vous maintenant</a>
+			<div class="button2"><button type="button" onclick="window.location.href='inscription_enseignant.html'">Créer un compte</button></div>
 		</form>
 	</div>
 </div>
-<script type="text/javascript" src="js/main.js"></script>
+<!-- Script JavaScript pour activer la géolocalisation -->
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(event)/*on va faire notre propre action qu'on veut quand on clique sur "Se connecter"*/ {
+  event.preventDefault();  // Empêche l'envoi automatique , pouraisse-moi gérer ce qui se passe.
+
+
+  // Redirection vers la page enseignant
+  window.location.href = "espace_enseignant.html";
+});
+</script>
+
 </body>
 </html>
