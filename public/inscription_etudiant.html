@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>inscription_etudiant</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: arial, sans-serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      width: 100%;
+      overflow-x: hidden;
+      min-height: 100vh;
+      background: url("degrade.jpg") no-repeat;
+      background-size: cover;
+      background-position: center;
+      max-width: 100vw;
+    }
+    header {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      background-color: transparent;
+      text-decoration: none;
+    }
+    header h1 {
+      font-size: 30px;
+      color: #f0c095;
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+      top: -30px;
+      left: 30px;
+      text-decoration: none;
+    }
+    .first-text {
+      color: white;
+    }
+    header a {
+      text-decoration: none;
+    }
+    a, header button {
+      font-size: 20px;
+      font-weight: 100;
+      color: white;
+      cursor: pointer;
+    }
+    header button {
+      background: transparent;
+      border: 2px solid #0d47a1;
+      border-radius: 50px;
+      padding: 5px 8px;
+      font-weight: bold;
+      position: relative;
+      right: 10px;
+      top: -30px;
+    }
+    header button:hover {
+      background-color: #0d47a1;
+      transition: all 0.4s ease 0s;
+    }
+    .wrapper {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      padding: 40px;
+      max-width: 700px;
+      width: 100%;
+    }
+    .wrapper h3, .wrapper h4 {
+      font-size: 30px;
+      font-weight: bold;
+      position: relative;
+      left: 10px;
+      font-family: elephant;
+      text-align: center;
+      color: #0d47a1;
+    }
+    .wrapper h3 {
+      top: -20px;
+    }
+    .wrapper h4 {
+      top: -25px;
+    }
+    .wrapper h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: #f0c095;
+      font-size: 17px;
+    }
+    .signup form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .icon {
+      position: relative;
+    }
+    .icon span {
+      display: block;
+      margin-bottom: 5px;
+      color: #0d47a1;
+      font-weight: bold;
+    }
+    .icon input,
+    .icon select {
+      width: 100%;
+      padding: 12px 40px 12px 15px;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      font-size: 16px;
+      background-color: #f9f9f9;
+    }
+    .icon i {
+      position: absolute;
+      right: 15px;
+      top: 40px;
+      color: #999;
+    }
+    .signup select {
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+      font-size: 16px;
+      color: #0d47a1;
+    }
+    button[type="submit"],
+    .signup button {
+      background-color: #0d47a1;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 18px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #f0c095;
+    }
+    @media (max-width: 600px) {
+      .wrapper {
+        padding: 20px;
+      }
+      header h1 {
+        font-size: 22px;
+        left: 10px;
+      }
+      .icon input,
+      .icon select,
+      .signup select {
+        font-size: 14px;
+      }
+      .wrapper h3, .wrapper h4 {
+        font-size: 24px;
+      }
+      button {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="">
+      <h1><span class="first-text"> ✅enligne</span>.exam</h1>
+    </a>
+    <a href="page d'accueil.html" class="btn"><button>Accueil</button></a>
+  </header>
+
+  <div class="wrapper">
+    <div class="image-wrapper"></div>
+    <h3>Formulaire</h3>
+    <h4>D´inscription</h4>
+    <h2>Créer votre compte pour accéder à votre espace</h2>
+    <div class="signup">
+      <form action="/inscription" method="post">
+        <select name="type_utilisateur" required>
+          <option value="">Type d'utilisateur</option>
+          <option value="etudiant">Étudiant</option>
+          <option value="enseignant">Enseignant</option>
+        </select>
+
+        <div class="icon">
+          <span>E-mail</span>
+          <input type="email" name="email" placeholder=" Entrer votre e-mail ">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="icon">
+          <span>Nom</span>
+          <input type="text" name="nom" placeholder=" Entrer votre nom" >
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="icon">
+          <span>Prénom</span>
+          <input type="text" name="prenom" placeholder=" Entrer votre prenom" >
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="icon">
+          <span>Date de naissance</span>
+          <input type="date" name="date" placeholder=" Entrer votre date " >
+          <i class="fa-solid fa-calendar-days"></i>
+        </div>
+        <div class="icon">
+          <select name="sexe" required>
+            <option value="">Sexe</option>
+            <option value="homme">Homme</option>
+            <option value="femme">Femme</option>
+          </select>
+        </div>
+        <div class="icon">
+          <span>Etablissement</span>
+          <input type="text" name="etablissement" placeholder=" Entrer votre établissement" >
+          <i class="fa-solid fa-school"></i>
+        </div>
+        <div class="icon">
+          <span>Filière</span>
+          <input type="text" name="filiere" placeholder=" Entrer votre filière" >
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="icon">
+          <span>Mot de passe</span>
+          <input type="password" name="password" placeholder=" Entrer votre mot de passe" >
+          <i class="fa-solid fa-lock"></i>
+        </div>
+
+        <button type="submit">S’inscrire</button>
+      </form>
+    </div>
+  </div>
+
+<script>
+  document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault(); // Empêche l'envoi réel du formulaire
+
+    const email = document.querySelector('input[name="email"]')?.value.trim();
+    const nom = document.querySelector('input[name="nom"]')?.value.trim();
+    const prenom = document.querySelector('input[name="prenom"]')?.value.trim();
+    const date = document.querySelector('input[name="date"]')?.value.trim();
+    const sexe = document.querySelector('select[name="sexe"]')?.value.trim();
+    const etab = document.querySelector('input[name="etablissement"]')?.value.trim();
+    const filiere = document.querySelector('input[name="filiere"]')?.value.trim();
+    const type = document.querySelector('select[name="type_utilisateur"]')?.value.trim();
+    const password = document.querySelector('input[name="password"]')?.value.trim();
+
+    if (!type || !email || !nom || !prenom || !date || !sexe || !etab || !filiere || !password) {
+      alert("❌ Veuillez remplir tous les champs, y compris le mot de passe.");
+      return;
+    }
+
+    // ✅ Affiche une alerte de confirmation
+    alert("✅ Inscription réussie ! Vous allez être redirigé vers la page de connexion.");
+
+    // Redirige vers la page de connexion
+    window.location.href = "connexion_etudiant.html";
+  });
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>connexion enseignant</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+	<style>
+		/* Réinitialisation de base */
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: arial;
+		}
+		html, body {
+			width: 100%;
+			overflow-x: hidden;
+			min-height: 100vh;
+		}
+		body {
+			background: url("./degrade.jpg") no-repeat;
+			height: 100vh;
+			background-size: cover;
+			background-position: center;
+		}
+		header {
+			width: 100%;
+			height: 75px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 10px;
+			background-color: transparent;
+		}
+		header h1 {
+			font-size: 30px;
+			color: #f0c095;
+			font-weight: bold;
+			cursor: pointer;
+			position: relative;
+			top: 3px;
+			left: 30px;
+		}
+		.first-text { color: white; }
+		header a { text-decoration: none; }
+		a, header button {
+			font-size: 20px;
+			font-weight: 100;
+			color: white;
+			cursor: pointer;
+		}
+		header button {
+			background: transparent;
+			border: 2px solid #0d47a1;
+			border-radius: 50px;
+			padding: 5px 8px;
+			font-weight: bold;
+		}
+		header button:hover {
+			background-color: #0d47a1;
+			transition: background-color 0.4s ease, border-color 0.4s ease;
+		}
+
+		/* Bloc principal */
+		.wrapper {
+			width: 55vw;
+			height: 70vh;
+			box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.6);
+			position: absolute;
+			left: 360px;
+			top: 120px;
+			overflow: hidden;
+			background-color: white;
+			border-radius: 10px;
+		}
+		.wrapper h3 {
+			font-size: 50px;
+			color: #0d47a1;
+			position: relative;
+			left: 100px;
+			top: 45px;
+			font-family: elephant;
+		}
+		.wrapper h4 {
+			font-size: 50px;
+			font-weight: bold;
+			color: #0d47a1;
+			position: relative;
+			left: 80px;
+			top: 50px;
+			font-family: elephant;
+		}
+		.wrapper h2 {
+			font-size: 15px;
+			color: black;
+			position: relative;
+			left: 30px;
+			top: 80px;
+		}
+
+		/* Partie formulaire */
+		.signup {
+			position: absolute;
+			left: 0;
+			width: 50%;
+			height: 100%;
+		}
+		.signup form {
+			position: absolute;
+			left: 0;
+			top: -55px;
+			width: 50%;
+			height: 50%;
+		}
+
+		/* Champs et icônes */
+		.icon span {
+			display: block;
+			font-size: 15px;
+			font-weight: bold;
+			position: relative;
+			top: 160px;
+			left: 30px;
+			color: #0d47a1;
+		}
+		.icon input {
+			width: 200px;
+			height: 30px;
+			border: 1px solid #0d47a1;
+			border-radius: 5px;
+			position: relative;
+			left: 140px;
+			top: 140px;
+		}
+		.icon i {
+			position: relative;
+			left: 310px;
+			top: 115px;
+			color: #0d47a1;
+			cursor: pointer;
+		}
+		.social_media i {
+			position: relative;
+			left: 298px;
+			top: 320px;
+		}
+
+		/* Checkbox */
+		.checkbox {
+			font-size: 10px;
+			font-weight: bold;
+			position: relative;
+			top: 130px;
+			left: 140px;
+		}
+		.checkbox input {
+			font-size: 10px;
+			color: black;
+			position: relative;
+			top: -3px;
+			left: 3px;
+			width: 10px;
+			height: 10px;
+			cursor: pointer;
+		}
+
+		/* Bouton principal */
+		.wrapper button {
+			position: relative;
+			left: 40px;
+			bottom: -150px;
+			font-size: 15px;
+			font-weight: 100;
+			color: white;
+			text-decoration: none;
+			cursor: pointer;
+			background: #0d47a1;
+			border: 1px solid #0d47a1;
+			border-radius: 5px;
+			padding: 5px 8px;
+			width: 300px;
+			height: 30px;
+		}
+		.wrapper button:hover {
+			background-color: #0d47a1;
+			transition: background-color 0.4s ease 0s;
+		}
+		.wrapper p {
+			font-size: 13px;
+			position: relative;
+			left: 50px;
+			top: 170px;
+			font-weight: bold;
+		}
+		.wrapper a {
+			font-size: 13px;
+			position: relative;
+			left: 50px;
+			top: 180px;
+			font-weight: bold;
+			color: #0d47a1;
+		}
+		.wrapper a:hover {
+			background-color: #0d47a1;
+			color: white;
+			transition: background-color 0.4s ease, color 0.4s ease;
+		}
+		.button2 button {
+			position: relative;
+			left: 250px;
+			bottom: -140px;
+			font-size: 13px;
+			font-weight: 100;
+			color: white;
+			text-decoration: none;
+			cursor: pointer;
+			background: #0d47a1;
+			border: 1px solid #0d47a1;
+			border-radius: 8px;
+			padding: 5px 8px;
+			width: 100px;
+			height: 40px;
+		}
+
+		/* Image à droite */
+		.image-wrapper {
+			display: inline-block;
+			width: 50%;
+			height: 100%;
+			position: absolute;
+			left: 27.5vw;
+		}
+
+		/* Responsive */
+		@media screen and (max-width: 768px) {
+			.wrapper {
+				width: 90vw;
+				height: auto;
+				left: 5vw;
+				top: 60px;
+				padding: 20px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+			}
+			.image-wrapper { display: none; }
+			.signup, .signup form {
+				width: 100%; left: 0; top: 0; position: relative;
+			}
+			.wrapper h3, .wrapper h4, .wrapper h2 {
+				position: static; text-align: center; font-size: 28px; margin-top: 10px;
+			}
+			.icon {
+				width: 100%; margin-top: 20px; text-align: left; padding: 0 10%;
+			}
+			.icon span { position: static; top: 0; left: 0; }
+			.icon input { width: 100%; position: static; margin-top: 5px; }
+			.icon i { display: none; }
+			.checkbox { left: 10%; top: 0; margin-top: 10px; }
+			.wrapper button, .button2 button {
+				width: 80%; margin: 15px auto 0; position: static; display: block;
+			}
+			.wrapper p, .wrapper a {
+				position: static; text-align: center; margin-top: 10px;
+			}
+		}
+		.enseignant-image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	</style>
+</head>
+<body>
+<header>
+	<a href="">
+		<h1><span class="first-text"> ✅enligne</span>.exam</h1>
+	</a>
+	<a href="page d'accueil.html" class="btn">
+		<button type="button">Accueil</button>
+	</a>
+</header>
+
+<div class="wrapper">
+	<div class="image-wrapper">
+		<img src="./ens.png" alt="Enseignant" class="enseignant-image" loading="lazy">
+	</div>
+
+	<h3>Espace</h3>
+	<h4>Enseignant</h4>
+	<h2>Connectez vous pour accéder à votre espace</h2>
+
+	<div class="signup">
+		<form id="loginForm">
+			<div class="icon">
+				<span>E-mail</span>
+				<input type="email" name="email" id="login-email" placeholder=" Entrer votre e-mail " required>
+				<i class="fa-solid fa-envelope"></i>
+			</div>
+			<div class="icon">
+				<span>Mot de passe</span>
+				<input type="password" name="password" id="login-password" placeholder=" Entrer votre mot de passe" required>
+				<i class="fa-solid fa-eye-slash" id="togglePassword"></i>
+			</div>
+			<div class="checkbox">
+				<label title="Voir mot de passe">
+					<input type="checkbox" id="showPass"> Voir mot de passe
+				</label>
+			</div>
+			
+			<!-- Bouton Se connecter -->
+			<button type="submit">Se connecter</button>
+
+			<p>Vous n´avez pas de compte? </p>
+			<a href="inscription_enseignant.html">Inscrivez-vous maintenant</a>
+			<div class="button2">
+				<button type="button" onclick="window.location.href='inscription_enseignant.html'">
+					Créer un compte
+				</button>
+			</div>
+		</form>
+	</div>
+</div>
+
+<!-- Script JavaScript pour login + show/hide password -->
+<script>
+	// Login form submission
+	document.getElementById('loginForm').onsubmit = async e => {
+		e.preventDefault();
+		const res = await fetch('/api/login', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				email: document.getElementById('login-email').value,
+				password: document.getElementById('login-password').value
+			})
+		});
+		const json = await res.json();
+		if (!res.ok) {
+			return alert(json.message || 'Échec de la connexion');
+		}
+		localStorage.setItem('token', json.token);
+		window.location.href = '/app';
+	};
+
+	// Toggle password visibility
+	const toggleIcon = document.getElementById('togglePassword');
+	const passwordInput = document.getElementById('login-password');
+	document.getElementById('showPass').addEventListener('change', function() {
+		if (this.checked) {
+			passwordInput.type = 'text';
+			toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+		} else {
+			passwordInput.type = 'password';
+			toggleIcon.classList.replace('fa-eye', 'fa-eye-slash');
+		}
+	});
+</script>
+
+</body>
+</html>

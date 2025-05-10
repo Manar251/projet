@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Espace Enseignant</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fdf6f0;
+      display: flex;
+      flex-direction: column; /* aligne les éléments de haut en bas sur l'axe vertical */
+      min-height: 100vh; /* la hauteur minimale d'un élément */
+    }
+.container button {
+      font-size: 20px;
+      font-weight: 100;
+      color: white;
+      cursor: pointer;
+    }
+    .container button {
+      background: transparent;
+      border: 2px solid #0d47a1;
+      border-radius: 50px;
+      padding: 5px 8px;
+      font-weight: bold;
+    }
+    .container button:hover {
+      background-color: #0d47a1;
+      transition: all 0.4s ease 0s;
+    }
+    .header {
+      background-color: #1f2a3f; /* Bleu foncé */
+      color: white;
+      padding: 1rem 2rem;
+      position: relative;
+      z-index: 10; /* définir l'ordre de superposition des éléments positionnés */
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .header-wave {
+      background: #cba075;
+      height: 50px;
+      border-bottom-left-radius: 50% 20px;
+      border-bottom-right-radius: 50% 20px;
+      z-index: 10;
+      position: relative;
+    }
+
+    .main-wrapper {
+      display: flex;
+      flex-direction: row; /* Définit la disposition horizontale */
+      min-height: 80vh;
+    }
+
+    .sidebar {
+      width: 300px;
+      background: #1f2a3f; /* Bleu foncé */
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .sidebar h1 {
+      font-size: 2rem;
+      line-height: 4rem;
+      margin-bottom: 520px;
+    }
+
+    .main-content {
+      flex: 1;
+      background-color: #fdf6f0;
+      padding: 2rem;
+      overflow-y: auto; /* pour gérer le débordement du contenu vertical d'un élément */
+    }
+
+    h2 {
+      color: #0d47a1;
+      margin-top: 1rem; /* Ajoute un espacement entre les éléments */
+    }
+
+    form {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 12px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="file"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+    }
+
+    .inline {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .inline label {
+      flex: 1;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 10px 20px;
+      background: #0d47a1;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #08306b;
+    }
+
+    .question-box {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+      background: #fffdfc;
+    }
+
+    .question-box button {
+      background: #a0522d;
+      margin-top: 0.5rem;
+    }
+
+    .question-box button:hover {
+      background: #7b3f1d;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .main-wrapper {
+        flex-direction: column; /* Disposition verticale sur les tablettes */
+      }
+
+      .sidebar {
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .sidebar h1 {
+        font-size: 1.5rem;
+        line-height: 2.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .main-content {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .header .logo {
+        font-size: 1.2rem;
+      }
+
+      .sidebar h1 {
+        font-size: 1.2rem;
+      }
+
+      .inline {
+        flex-direction: column;
+      }
+
+      button {
+        width: 100%;
+      }
+
+      .question-box {
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 1rem;
+      }
+
+      .sidebar {
+        padding: 1rem;
+        text-align: left;
+      }
+
+      .sidebar h1 {
+        font-size: 1.1rem;
+      }
+
+      .inline {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      button {
+        padding: 8px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">✅enligne<span style="color: #f0c095;">.exam</span></div>
+      <a href="page d'accueil.html" class="btn"><button>Accueil</button></a>
+    </div>
+  </header>
+  <div class="header-wave"></div>
+
+  <!-- CONTENU PRINCIPAL -->
+  <div class="main-wrapper">
+    <div class="sidebar">
+      <h1>Bienvenue<br>sur votre<br>espace enseignant</h1>
+    </div>
+
+    <div class="main-content">
+      <h2>Création d’un Examen</h2>
+      <form id="examForm">
+        <label>Titre :
+          <input type="text" name="titre" required>
+        </label>
+        <label>Description :
+          <input type="text" name="description">
+        </label>
+        <label>Public ciblé :
+          <input type="text" name="public" placeholder="ex: 2e année MIP, S4, Groupe A">
+        </label>
+        <label>Lien généré :
+          <input type="text" id="examLink" readonly><!-- rendre un champ de formulaire non modifiable-->
+        </label>
+        <button type="button">Ajouter l'examen</button>
+      </form>
+
+      <h2>Examens créés</h2>
+      <div id="listeExamens"></div>
+
+      <h2>Ajout de Questions</h2>
+      <form id="questionForm">
+        <label>Type de question :
+          <select id="typeQuestion">
+            <option value="directe">Question Directe</option>
+            <option value="qcm">QCM</option>
+          </select>
+        </label>
+
+        <label>Énoncé :
+          <textarea name="question" rows="2"></textarea>
+        </label>
+
+        <label>Fichier joint :
+          <input type="file" accept="image/*,audio/*,video/*">
+        </label>
+
+        <!-- Partie Question Directe -->
+        <div id="directeFields">
+          <label>Réponse attendue :
+            <input type="text" name="reponseDirecte">
+          </label>
+          <label>Taux de tolérance (% erreurs) :
+            <input type="text" value="10%">
+          </label>
+        </div>
+
+        <!-- Partie QCM -->
+        <div id="qcmFields" style="display: none;">
+          <label>Option 1 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+          <label>Option 2 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+          <label>Option 3 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+          <label>Option 4 : <input type="text"> <input type="checkbox"> Bonne réponse</label>
+        </div>
+
+        <div class="inline">
+          <label>Note :
+            <input type="number" value="10">
+          </label>
+          <label>Durée (en secondes) :
+            <input type="number" value="60">
+          </label>
+        </div>
+
+        <button type="button">Ajouter la question</button>
+      </form>
+
+      <div id="listeQuestions"></div>
+    </div>
+  </div>
+
+</body>
+</html>
